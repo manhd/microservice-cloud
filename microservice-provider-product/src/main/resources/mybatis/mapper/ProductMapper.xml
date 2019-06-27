@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.haidm.spring.cn.mapper.ProductMapper">
+
+    <select id="queryById" resultType="com.haidm.spring.cn.entities.Product" parameterType="Long">
+   select pid, product_name, db_source from T_HAIDM_PRODUCT where pid=#{pid};
+  </select>
+
+    <select id="productList" resultType="map">
+   select pid, product_name, db_source from t_haidm_product;
+  </select>
+
+    <insert id="insertProduct" parameterType="com.haidm.spring.cn.entities.Product">
+   INSERT INTO T_HAIDM_PRODUCT (product_name, db_source) VALUES(#{productName}, DATABASE());
+  </insert>
+    
+    <delete id="deletePriductById" parameterType="Long">
+        delete from T_HAIDM_PRODUCT where pid = #{pid}
+    </delete>
+
+</mapper>

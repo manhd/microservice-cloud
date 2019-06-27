@@ -1,0 +1,13 @@
+server:
+  port: 55655
+
+spring:
+  application:
+    name: microservice-cloud-config
+  cloud:
+    config:
+     server:
+       git: #远程库的git 地址
+         uri: https://github.com/manhd/microservice-cloud-config.git
+encrypt:
+  key: mykey

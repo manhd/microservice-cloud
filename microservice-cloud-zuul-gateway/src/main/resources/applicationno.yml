@@ -1,0 +1,35 @@
+server:
+  port: 32235
+
+spring:
+  application:
+    name: microservice-zuul-gateway
+
+
+#eureka 配置
+eureka:
+  client:
+    register-with-eureka: true  #是否向注册中心注册
+    fetch-registry: true #是否获取其他服务的信息
+    service-url: #eureka 注册中心的地址，需要注册到哪一个注册中心
+      #defaultZone: http://localhost:32233/eureka
+      defaultZone: http://eureka32231.com:32231/eureka,http://eureka32232.com:32232/eureka
+  instance:
+    instance-id: ${spring.application.name}:${server.port}  #指定实例ID,就不会显示主机名了
+    prefer-ip-address: true #访问路径可以显示Ip 地址
+
+
+
+#路由转发映射配置
+zuul:
+  routes:
+    #服务提供者
+    provider-product: #路由名称，名称任意但唯一
+      path: /product/**   #访问路径
+      serviceId: microservice-provider-product  # 服务名称   会自动从 Eureka 服务中找到此服务的 ip 和 端口
+      stripPrefix: false # 代理转发时去掉前缀，false:代理转发时不去掉前缀 例如:为true时请求 /product/get/1，代理转发到/get/1
+      #服务消费者
+    consumer-product: #路由名称，名称任意但唯一
+      path: /consumer/**   #访问路径
+      serviceId: microservice-consumer-product  # 服务名称   会自动从 Eureka 服务中找到此服务的 ip 和 端口
+      stripPrefix: false # 代理转发时去掉前缀，false:代理转发时不去掉前缀 例如:为true时请求 /product/get/1，代理转发到/get/1

@@ -1,0 +1,17 @@
+server:
+  port: 32331
+#eureka 配置
+eureka:
+  client:
+    register-with-eureka: false  #是否向注册中心注册
+    fetch-registry: true #是否获取其他服务的信息
+    service-url: #eureka 注册中心的地址，需要注册到哪一个注册中心
+      #defaultZone: http://localhost:32233/eureka
+      defaultZone: http://eureka32231.com:32231/eureka,http://eureka32232.com:32232/eureka
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true # 访问路径就会显示为IP
+
+spring:
+  application:
+    name: microservice-consumer-product
