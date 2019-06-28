@@ -24,23 +24,26 @@
     <packaging>pom</packaging>
 
 
-    <!-- spring boot 采用 2.0.7 版本 -->
+
+    <properties>
+        <spring-boot.version>1.5.3.RELEASE</spring-boot.version>
+        <spring-cloud.version>Dalston.SR1</spring-cloud.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <junit.version>4.12</junit.version>
+        <!-- spring cloud 采用 版本 -->
+        <spring-cloud.version>Dalston.SR1</spring-cloud.version>
+    </properties>
+
+
+    <!-- spring boot 采用 1.5.3.RELEASE版本 -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.3.RELEASE</version>
         <relativePath/>
     </parent>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <junit.version>4.12</junit.version>
-        <!-- spring cloud 采用 Finchley.SR2 版本 -->
-        <spring-cloud.version>Dalston.SR1</spring-cloud.version>
-    </properties>
-
 
     <!--依赖声明-->
     <dependencyManagement>
