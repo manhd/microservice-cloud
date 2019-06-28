@@ -1,7 +1,7 @@
 package com.haidm.spring.cn.feignservice;
 
 import com.haidm.spring.cn.entities.Product;
-import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
