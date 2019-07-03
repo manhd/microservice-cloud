@@ -2,6 +2,6 @@ spring:
   cloud:
     config:
       name: microservice-consumer-product #github上的配置名称，注意没有yml后缀名
-      profile: test    #本次访问的环境配置项
+      profile: prod    #本次访问的环境配置项
       label: master   #远程库的分支名
-      uri: http://113.3.0.139:55655 #Config配置中心地址，通过它获取microservice-config-application.yml配置信息
+      uri: http://119.3.0.139:55655 #Config配置中心地址，通过它获取microservice-config-application.yml配置信息
