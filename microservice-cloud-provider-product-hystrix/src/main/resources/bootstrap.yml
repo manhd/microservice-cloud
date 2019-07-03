@@ -2,12 +2,12 @@ spring:
   cloud:
     config:
       name: microservice-provider-product-hystrix #github上的配置名称，注意没有yml后缀名
-      profile: dev    #本次访问的环境配置项
+      profile: test    #本次访问的环境配置项
       label: master   #远程库的分支名
-      uri: http://127.0.0.1:55655 #Config配置中心地址，通过它获取microservice-config-application.yml配置信息
+      uri: http://113.3.0.139:55655 #Config配置中心地址，通过它获取microservice-config-application.yml配置信息
   # kafka  消息队列
   kafka:
-    bootstrap-servers: 192.168.10.11:9092
+    bootstrap-servers: 113.3.0.139:9092
     producer:
       batch-size: 16384
       buffer-memory: 33554432
@@ -16,7 +16,7 @@ spring:
   #redis 缓存
   redis:
     database: 0 #数据库索引默认为0
-    host: 192.168.10.11
+    host: 113.3.0.139
     port: 6379
     password: manhd123.
     pool:
